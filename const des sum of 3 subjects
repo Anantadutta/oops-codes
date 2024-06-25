@@ -1,0 +1,53 @@
+
+
+class Student {
+private:
+    static const int numSubjects = 3; 
+    int marks[numSubjects]; 
+
+public:
+    
+    Student() {
+        for (int i = 0; i < numSubjects; i++) {
+            marks[i] = 0; 
+        }
+        cout << "Student object created with " << numSubjects << " subjects." << endl;
+    }
+
+    
+    void setMarks(int subjectIndex, int mark) {
+        if (subjectIndex >= 0 && subjectIndex < numSubjects) {
+            marks[subjectIndex] = mark;
+        } else {
+            cout << "Invalid subject index!" << endl;
+        }
+    }
+
+   
+    int getSumOfMarks() {
+        int sum = 0;
+        for (int i = 0; i < numSubjects; i++) {
+            sum += marks[i];
+        }
+        return sum;
+    }
+
+    
+    ~Student() {
+        cout << "Student object destroyed"<< endl;
+    }
+};
+
+int main() {
+    Student student;
+    
+    student.setMarks(0, 85);
+    student.setMarks(1, 90);
+    student.setMarks(2, 78);
+    
+    int totalMarks=student.getSumOfMarks();
+    cout<<"Total marks" << totalMarks<<endl;
+
+   
+    return 0;
+}

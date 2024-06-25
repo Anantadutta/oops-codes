@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+ 
+ class student{
+ 	private:
+ 		
+ 		int marks1;
+ 		int marks2;
+ 		public:
+ 			student(int m1,int m2){
+ 			
+ 				marks1=m1;
+ 				marks2=m2;
+ 				
+ 				
+			 }
+			 void showdata(){
+			 	
+			 	cout<<"the marks 1 of the student is"<<marks1;
+			    cout<<"the marks 2 of the student is"<<marks2;
+
+			 }
+			 
+			 friend class text1;
+ };
+            class text1{
+            	public:
+            		void add(student r){
+            			int add=r.marks1+r.marks2;
+            				cout<<"the sum of the marks is"<<add;
+            			
+					}
+				
+					
+			};
+			int main(){
+				student obj(40,80);
+				text1 obj2;
+				obj.showdata();
+				obj2.add(obj);
+				
+				
+				
+				
+			}
